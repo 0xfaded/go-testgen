@@ -70,7 +70,7 @@ func Generate(gen Generator, w io.Writer) error {
 		if _, err := w.Write([]byte("func Test" + prefix + testName)); err != nil {
 			return err
 		}
-		if _, err := w.Write([]byte("(t *Testing) {\n")); err != nil {
+		if _, err := w.Write([]byte("(t *testing.T) {\n")); err != nil {
 			return err
 		}
 		if err := gen.Body(w, elts...); err != nil {

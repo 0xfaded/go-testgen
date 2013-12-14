@@ -77,32 +77,32 @@ import (
 )
 
 // A D F
-func TestTestADF(t *Testing) {
+func TestTestADF(t *testing.T) {
 	_ = 0 + 1 + 4 + 6
 }
 
 // A E F
-func TestTestAEF(t *Testing) {
+func TestTestAEF(t *testing.T) {
 	_ = 0 + 1 + 5 + 6
 }
 
 // B D F
-func TestTestBDF(t *Testing) {
+func TestTestBDF(t *testing.T) {
 	_ = 0 + 2 + 4 + 6
 }
 
 // B E F
-func TestTestBEF(t *Testing) {
+func TestTestBEF(t *testing.T) {
 	_ = 0 + 2 + 5 + 6
 }
 
 // C D F
-func TestTestCDF(t *Testing) {
+func TestTestCDF(t *testing.T) {
 	_ = 0 + 3 + 4 + 6
 }
 
 // C E F
-func TestTestCEF(t *Testing) {
+func TestTestCEF(t *testing.T) {
 	_ = 0 + 3 + 5 + 6
 }
 `
