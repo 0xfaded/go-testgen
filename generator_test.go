@@ -33,6 +33,11 @@ func (*Test) Dimensions() []Dimension {
 	}
 }
 
+func (*Test) Globals(w io.Writer) error {
+	_, err := w.Write([]byte("type X int\n"))
+	return err
+}
+
 func (*Test) Comment(w io.Writer, elts ...Element) error {
 	if _, err := w.Write([]byte("//")); err != nil {
 		return err
@@ -75,6 +80,7 @@ import (
 	"importa"
 	"importb" b
 )
+type X int
 
 // A D F
 func TestTestADF(t *testing.T) {

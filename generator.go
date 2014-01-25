@@ -10,6 +10,7 @@ type Generator interface {
 	Prefix() string
 	Imports() map[string] string
 	Dimensions() []Dimension
+	Globals(io.Writer) error
 	Comment(io.Writer, ...Element) error
 	Body(io.Writer, ...Element) error
 }
@@ -46,6 +47,10 @@ func Generate(gen Generator, w io.Writer) error {
 	end := uint64(1)
 	for _, dim := range(dims) {
 		end *= uint64(len(dim))
+	}
+
+	if err := gen.Globals(w); err != nil {
+		return err
 	}
 
 	elts := make([]Element, len(dims))
